@@ -1,16 +1,12 @@
-renda_mensal = float(input("Digite sua renda mensal: "))
-score = int(input("Digite o seu score: "))
+renda_mensal = 25000.0
+score = 800
 possui_restricao = False
-possui_restricao = input("Possui restrição, sim ou não? ")
 
-if possui_restricao == 'sim':
-    possui_restricao = True
-else:
-    possui_restricao = False
 
-if score >= 700 and renda_mensal >= 4000.00 and not possui_restricao:
+if (not possui_restricao and score >= 700 and renda_mensal >= 4000):
     print("Aprovado!")
-elif (renda_mensal >= 2500.00 and possui_restricao) or (score >= 500 and renda_mensal > 6000.00):
-    print('Sendo averiguado possível aprovação... ')
+elif (not possui_restricao and renda_mensal >= 2500
+      and (score >= 500 or renda_mensal > 6000)):
+    print('Analise Manual')
 else:
-    print("Recusado!")
+    print("Empréstimo Reprovado")
